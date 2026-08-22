@@ -1,0 +1,213 @@
+﻿<html>
+
+  <head>
+
+    <title>Formal Semantics of Programming Languages, Fall 2026</title>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      .lecture-table-wrapper {
+        margin-bottom: 1em;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .lecture-table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .lecture-table th,
+      .lecture-table td {
+        padding: 0.6em 0.75em;
+        border: 1px solid #999;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .lecture-table thead th {
+        background-color: #f2f2f2;
+      }
+
+      .lecture-table tbody th {
+        white-space: nowrap;
+      }
+
+      .lecture-table .placeholder {
+        color: #666;
+        text-align: center;
+      }
+    </style>
+
+  </head>
+
+  <body style="line-height:150%">
+
+    <h3><font size="5" face="Georgia">程序设计语言的形式语义（Formal Semantics of Programming Languages）</font></h3>
+    <p><font size="4" face="Georgia">学期：2026-2027学年第一学期</font></p>
+    <p><font size="4" face="Georgia">上课时间地点：周三3-4节，10:10 - 12:00，仙I-216</font></p>
+    <p><font size="4" face="Georgia">Office Hours：周三下午15:00-17:00，计算机楼404室</font></p>
+    <p><font size="4" face="Georgia">授课老师：<a href="https://hongjin-liang.github.io/">梁红瑾</a>，计算机楼404室</p>
+    <p><font size="4" face="Georgia">助教：待定 <!--<a href="mailto:191220060@smail.nju.edu.cn">林荣恩</a>，计算机楼409室--></font></p>
+	
+<!---
+<hr>
+	<p><font size="4" face="Georgia">期末考试时间：2025年12月24日周三1-2节，8:00am - 9:50am，地点：仙I-102，闭卷</font></p>
+--->
+
+<hr>
+    <h3 id="course-schedule-heading"><font face="Georgia">Course Schedule</font></h3>
+    <div class="lecture-table-wrapper" role="region" aria-labelledby="course-schedule-heading" tabindex="0">
+      <table class="lecture-table" aria-labelledby="course-schedule-heading">
+        <thead>
+          <tr>
+            <th scope="col">Dates</th>
+            <th scope="col">Lectures</th>
+            <th scope="col">Reading Materials</th>
+            <th scope="col">Homework</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">08/26</th>
+            <td>Introduction (<a href="01_Introduction.pptx">notes</a>), and Rocq tutorial (<a href="02_RocqOverview.pptx">Overview</a>, and the <a href="demo.v">Rocq file</a> used for the demo, which can be compiled with Rocq 9.2.0).</td>
+            <td>You could install Rocq following the instructions on <a href="https://rocq-prover.org">the official website</a>.</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+<!--
+          <tr>
+            <th scope="row">09/03</th>
+            <td>Mathematical background (<a href="03_math.pdf">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">09/10</th>
+            <td>Lambda calculus (<a href="04_lambda.pptx">notes</a>).</td>
+            <td>Read the first three sections of <a href="lambdanotes.pdf">Peter Selinger's lecture notes</a>. Also see <a href="http://worrydream.com/AlligatorEggs/">Alligator Eggs for Untyped Lambda Calculus</a> for fun.</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">09/17</th>
+            <td>Lambda calculus (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">09/24</th>
+            <td>Lambda calculus (continued), and simply-typed lambda calculus (<a href="05_types.pptx">notes</a>).</td>
+            <td>Read the <a href="typesafe_proof.pdf">type-safety proofs</a> of Dan Grossman's lecture notes.</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">10/11</th>
+            <td>Simply-typed lambda calculus (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">10/15</th>
+            <td>System F (<a href="06_SystemF.pdf">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">10/22</th>
+            <td>System F-omega (<a href="07_F-omega.pdf">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">10/29</th>
+            <td>Operational semantics of imperative languages (<a href="08_operational.pdf">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">11/05</th>
+            <td>Operational semantics (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">11/12</th>
+            <td>Operational semantics (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">11/19</th>
+            <td>Hoare logic (<a href="09_Hoare.pdf">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">11/26</th>
+            <td>Hoare logic (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">12/03</th>
+            <td>Hoare logic (continued).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">12/10</th>
+            <td>Separation logic (<a href="10_Separation.pdf">notes</a>).</td>
+            <td>Read the <a href="https://www.cs.cmu.edu/~jcr/copenhagen08.pdf">notes</a> by Reynolds.</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+          <tr>
+            <th scope="row">12/17</th>
+            <td>Separation logic (continued). Course review (<a href="11_review.pptx">notes</a>).</td>
+            <td class="placeholder" aria-label="Not available">&mdash;</td>
+            <td class="placeholder" aria-label="Not yet available">&mdash;</td>
+          </tr>
+-->
+        </tbody>
+      </table>
+    </div>
+
+
+
+	<hr>
+
+    <h3><font face="Georgia">Submission guidelines for homework</font></h3>
+	<ul> 
+	<li> Please submit via the system "智汇南雍"教学平台 (<a href="https://lms.nju.edu.cn">https://lms.nju.edu.cn</a>). </li>
+	<li> Your answers can be in either Chinese or English. They should be submitted in pdf. </li>
+	<li> Late submissions are not accepted (unless special reasons provided).</li>
+	<!--<li> In case you have any problems on submitting your answers, please contact TA<<a href="mailto:191220060@smail.nju.edu.cn">191220060@smail.nju.edu.cn</a>>. </li>-->
+    </ul>
+	</font>
+
+
+	<hr>
+	
+	<h3><font face="Georgia">Textbooks and References</font></h3>
+    <ul>
+	<li>Textbooks: lecture notes</li>
+	<li>References:</li>
+	    <ul>
+		    <li> Benjamin C. Pierce, et al. <a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations</a> </li>
+		    <li> John C. Reynolds. Theories of Programming Languages, Cambridge University Press.</li>
+		    <li> Robert Harper. <a href="http://www.cs.cmu.edu/~rwh/pfpl">Practical Foundations for Programming Languages</a>.</li>
+		    <li> Hanne Riis Nielson, Flemming Nielson. Semantics with Applications: A Formal Introduction.</li>
+			  <li> Glynn Winskel. The Formal Semantics of Programming Languages: An Introduction. The MIT Press. </li>
+			  <li> Benjamin C. Pierce. Types and Programming Languages. The MIT Press. </li>
+	    </ul>
+    </ul>
+
+	
+	<hr>
+
+    <p><font size="3" face="Georgia">最后更新日期：2026-08-22</font></p>
+  </body>
+
+</html>
+
